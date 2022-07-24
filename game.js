@@ -9,16 +9,18 @@ let character = document.createElement('img')
 character.setAttribute("src", "./images/character.jpeg")
 character.setAttribute("class", "character")
 
+// Set up box
+
+let box = document.createElement('img')
+box.setAttribute("src", "./images/box.jpeg")
+box.setAttribute("class", "character")
+
 // Setup a table that will act as the playing field
-let area = document.getElementsByTagName('td')
 
-console.log(area)
 
-let rows = document.getElementsByClassName('row1')
-console.log(rows)
 // Set starting position of character on screen
 
-// document.getElementById('start').appendChild(character)
+document.getElementById('start').appendChild(character)
 
 // Set parameters of where character could move
 
