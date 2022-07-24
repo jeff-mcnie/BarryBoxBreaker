@@ -108,6 +108,51 @@ function moveCharacter() {
   
 }
 
+function gameOver() {
+  alert(`You have found 3 relics! Barry has broken enough boxes for today! You won the game`)
+  document.location.reload()
+}
+
+function boxMove() {
+  newBox = moveArea[getRandomNumber(0, moveArea.length)]
+  newBox.appendChild(box)
+}
+
+let relic = 0
+
+function getItem() {
+  let num = getRandomNumber(0, 5)
+  let message = document.getElementById('message')
+  let relics = document.getElementById('relics')
+  
+
+  console.log(num)
+  switch (num) {
+    case 0:
+      message.innerHTML = `You found an old sock. EW!`
+      break;
+
+    case 1:
+      message.innerHTML = `You found ... nothing! The box was empty!`
+      break;
+
+    case 2:
+      message.innerHTML = `You found a raccoon! It escaped before you could grab it.`
+      break;
+
+    case 3:
+      message.innerHTML = `You found another box! It was empty though.`
+      break;
+
+    case 4:
+      message.innerHTML = `You found a relic!!!`
+      relic++
+      relics.innerHTML = `You have ${relic} relic(s)`
+      message.innerHTML
+      break;
+
+  }
+}
 // Need to make commands so the movement isn't random.
 
 // Need to add boxes (imgs with functionality) That the character can interact with
