@@ -1,8 +1,10 @@
 td {
   background-color: white;
   height: 100px;
-  border: 1px black;
   width: 100px;
+  padding: none;
+  margin: none;
+  border-style: collapse;
 }
 
 .character {
@@ -14,4 +16,6 @@ td {
   position: fixed;
 }
 
-
+h1, h2 {
+  text-align: center;
+}
