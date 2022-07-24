@@ -26,61 +26,32 @@ document.getElementById('start').appendChild(character)
 
 let moveArea = document.getElementsByTagName('td')
 
-function keyPressed(e) {
-
-  switch (e.key) {
-    case 'ArrowUp':
-      moveUp()
-      break;
-    case 'ArrowDown':
-      moveDown()
-      break;
-    case 'ArrowLeft':
-      moveLeft()
-      break;
-    case 'ArrowRight':
-      moveRight()
-      break;
-  }
-}
-
-function moveUp() {
-
-}
-
-function moveDown() {
-
-}
-
-function moveLeft() {
-
-}
-
-function moveRight() {
-
-}
-
-
 // for fun, make him move randomly based on a key press
 // It's so much fun, but kind of useless
 
 function getRandomNumber(min, max) {
   return Math.floor(Math.random() * (max - min)) + min
 }
+
+// Set new box, start box and provide a count to be used to count boxes broken
+
 let newBox = moveArea[getRandomNumber(0, moveArea.length)]
 let startBox = moveArea[getRandomNumber(0, moveArea.length)]
 startBox.appendChild(box)
 let count = 0
 
+// All the fun character random movement. Will check lots of things and update accordingly
+
 function moveCharacter() {
   let newArea = moveArea[getRandomNumber(0, moveArea.length)]
   let breaks = document.getElementById('breaks')
   
-
   console.log(newBox)
 
   if (relic == 3) {
+
     gameOver()
+
   } else if (newArea == startBox) {
 
   startBox.removeChild(box)
@@ -102,22 +73,29 @@ function moveCharacter() {
     breaks.innerHTML = `You have broken ${count} boxes`
 
   } else {
+
     newArea.appendChild(character)
+
   }
 
   
 }
+
+// Set game over when relics = 3. This is checked in moveCharacter. Will display an alert and then reload the page to reset the game.
 
 function gameOver() {
   alert(`You have found 3 relics! Barry has broken enough boxes for today! You won the game`)
   document.location.reload()
 }
 
+// Function to move the box when the last box is broken
+
 function boxMove() {
   newBox = moveArea[getRandomNumber(0, moveArea.length)]
   newBox.appendChild(box)
 }
 
+// Get an item from the box. Will be random from the list. Update relic when relic is found.
 let relic = 0
 
 function getItem() {
@@ -153,10 +131,8 @@ function getItem() {
 
   }
 }
-// Need to make commands so the movement isn't random.
 
-// Need to add boxes (imgs with functionality) That the character can interact with
-// Boxes will use a number number generator to generate a random reward from a list
-// Low chance of getting a relic!
-// Collect 5 relics to win the game!
-// When box is opened. Another box is generated on a random square
+// Need to make commands so the movement isn't random.
+// Will expand game field when movement isn't random
+// Could add a timer and fastest score function?
+
