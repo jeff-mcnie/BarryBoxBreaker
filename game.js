@@ -54,13 +54,13 @@ function moveCharacter() {
 
   } else if (newArea == startBox) {
 
-  startBox.removeChild(box)
-  newArea.appendChild(character)
-  newBox.appendChild(box)
-  startBox = 0
-  getItem()
-  count++
-  breaks.innerHTML = `You have broken ${count} boxes`
+    startBox.removeChild(box)
+    newArea.appendChild(character)
+    newBox.appendChild(box)
+    startBox = 0
+    getItem()
+    count++
+    breaks.innerHTML = `You have broken ${count} boxes`
 
   } else if (newArea == newBox) {
 
