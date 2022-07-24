@@ -74,6 +74,16 @@ let count = 0
 
 function moveCharacter() {
   let newArea = moveArea[getRandomNumber(0, moveArea.length)]
+  let breaks = document.getElementById('breaks')
+  
+
+  console.log(newBox)
+
+  if (relic == 3) {
+    gameOver()
+  } else if (newArea == startBox) {
+
+  startBox.removeChild(box)
   newArea.appendChild(character)
 }
 
