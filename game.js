@@ -67,6 +67,10 @@ function moveRight() {
 function getRandomNumber(min, max) {
   return Math.floor(Math.random() * (max - min)) + min
 }
+let newBox = moveArea[getRandomNumber(0, moveArea.length)]
+let startBox = moveArea[getRandomNumber(0, moveArea.length)]
+startBox.appendChild(box)
+let count = 0
 
 function moveCharacter() {
   let newArea = moveArea[getRandomNumber(0, moveArea.length)]
