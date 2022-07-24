@@ -85,6 +85,27 @@ function moveCharacter() {
 
   startBox.removeChild(box)
   newArea.appendChild(character)
+  newBox.appendChild(box)
+  startBox = 0
+  getItem()
+  count++
+  breaks.innerHTML = `You have broken ${count} boxes`
+
+  } else if (newArea == newBox) {
+
+    newBox.removeChild(box)
+    newArea.appendChild(character)
+    newBox = moveArea[getRandomNumber(0, moveArea.length)]
+    newBox.appendChild(box)
+    getItem()
+    count++
+    breaks.innerHTML = `You have broken ${count} boxes`
+
+  } else {
+    newArea.appendChild(character)
+  }
+
+  
 }
 
 // Need to make commands so the movement isn't random.
