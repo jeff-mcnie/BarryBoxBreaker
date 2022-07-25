@@ -6,7 +6,7 @@ document.addEventListener('keyup', moveCharacter)
 // Set up character
 
 let character = document.createElement('img')
-character.setAttribute("src", "./images/character.jpeg")
+character.setAttribute("src", "./images/creature.gif")
 character.setAttribute("class", "character")
 
 // Set up box
